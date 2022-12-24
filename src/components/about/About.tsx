@@ -2,14 +2,17 @@ import React from "react";
 import "./About.css";
 import ME from "../../assets/me-about.jpg";
 import { FaAward, FaFolder, FaUserAlt } from "react-icons/fa";
+import SectionWrapper from "../common/SectionWrapper";
 
 const About = () => {
   return (
-    <section id="about">
-      <h5>Get To Know</h5>
-      <h2>About Me</h2>
-
-      <div className="container about__container">
+    <SectionWrapper
+      subtitle={"Get To Know"}
+      title={"About Me"}
+      containerClass={"about__container"}
+      id={"about"}
+    >
+      <>
         <div className="about__me">
           <div className="about__me-image">
             <img src={ME} alt="About me" />
@@ -45,8 +48,8 @@ const About = () => {
             Let's Talk
           </a>
         </div>
-      </div>
-    </section>
+      </>
+    </SectionWrapper>
   );
 };
 
