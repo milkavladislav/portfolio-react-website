@@ -1,8 +1,14 @@
-import React, { ReactElement } from "react";
+import React, {
+  FormEvent,
+  FormEventHandler,
+  ReactElement,
+  useRef,
+} from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiTelegramLine } from "react-icons/ri";
 import SectionWrapper from "../common/SectionWrapper";
 import "./Contact.css";
+import emailjs from "@emailjs/browser";
 
 interface IContactOption {
   title: string;
@@ -30,6 +36,30 @@ const contactOptions: IContactOption[] = [
 ];
 
 const Contact = () => {
+  const form = useRef<HTMLFormElement | null>(null);
+
+  const sendEmail = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (form && form.current) {
+      emailjs
+        .sendForm(
+          "service_fev4ev9",
+          "template_c8am5wt",
+          form.current,
+          "arX_Xt4-jSwhj5wUH"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+      (event.target as HTMLFormElement).reset()
+    }
+  };
+
   return (
     <SectionWrapper
       subtitle={"Get In Touch"}
@@ -50,7 +80,7 @@ const Contact = () => {
             </article>
           ))}
         </div>
-        <form action="">
+        <form ref={form} onSubmit={sendEmail}>
           <input
             type={"text"}
             required
