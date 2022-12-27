@@ -30,7 +30,7 @@ const socialMedia: ISocialMedia[] = [
 const Footer = () => {
   return (
     <footer>
-      <a href="#" className="footer__logo">
+      <a href="/#" className="footer__logo">
         Milka Vladislav Portfolio
       </a>
 
@@ -44,7 +44,9 @@ const Footer = () => {
 
       <div className="footer__socials">
         {socialMedia.map(({ link, icon }) => (
-          <a href={link}>{icon}</a>
+          <a href={link} target="_blank" rel="noreferrer">
+            {icon}
+          </a>
         ))}
       </div>
 
