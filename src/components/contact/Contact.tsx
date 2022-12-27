@@ -1,9 +1,4 @@
-import React, {
-  FormEvent,
-  FormEventHandler,
-  ReactElement,
-  useRef,
-} from "react";
+import { FormEvent, ReactElement, useRef } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiTelegramLine } from "react-icons/ri";
 import SectionWrapper from "../common/SectionWrapper";
@@ -56,7 +51,7 @@ const Contact = () => {
             console.log(error.text);
           }
         );
-      (event.target as HTMLFormElement).reset()
+      (event.target as HTMLFormElement).reset();
     }
   };
 
