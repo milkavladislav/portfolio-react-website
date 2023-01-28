@@ -20,6 +20,9 @@
 .portfolio__item-image {
   border-radius: 1.5rem;
   overflow: hidden;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1.5/1;
 }
 
 .portfolio__item h3 {

@@ -75,7 +75,7 @@ const Experience = () => {
     <SectionWrapper
       id="experience"
       title="My Experience"
-      subtitle="WHat Skills I Have"
+      subtitle="What Skills I Have"
       containerClass="experience__container"
     >
       <>
